@@ -1,3 +1,8 @@
+"""
+This is a simple agent that can answer questions.
+"""
+
+from typing import Callable, Sequence
 import os
 
 gcloud_project_id = os.getenv("GCLOUD_PROJECT_ID")
@@ -5,10 +10,9 @@ gcloud_location = os.getenv("GCLOUD_LOCATION")
 gcloud_bucket = os.getenv("GCLOUD_BUCKET")
 
 
-from typing import Callable, Sequence
-
-
 class Agent:
+    """A simple agent that can answer questions using Vertex AI and LangGraph."""
+
     def __init__(
         self,
         model: str,

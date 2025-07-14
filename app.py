@@ -51,35 +51,3 @@ remote_agent = agent_engines.create(
     env_vars=env_vars,  # Optional.
     # build_options=build_options,    # Optional.
 )
-
-# max_retries = 5
-# initial_delay = 5  # seconds
-# remote_agent = None
-
-# for i in range(max_retries):
-#     try:
-#         print(f"Attempt {i+1}/{max_retries} to create remote agent...")
-#         remote_agent = agent_engines.create(
-#             local_agent,
-#             requirements=requirements,
-#             gcs_dir_name=gcs_dir_name,
-#             display_name=display_name,
-#             description=description,
-#             env_vars=env_vars,
-#         )
-#         print("Remote agent created successfully!")
-#         break  # Exit loop if successful
-#     except Exception as e:
-#         if "concurrent policy changes" in str(e):
-#             delay = initial_delay * (2 ** i)
-#             print(f"Concurrent policy change error. Retrying in {delay} seconds... (Error: {e})")
-#             time.sleep(delay)
-#         else:
-#             print(f"An unexpected error occurred: {e}")
-#             raise
-# else:
-#     print(f"Failed to create remote agent after {max_retries} attempts.")
-
-# # You can now use remote_agent if it was successfully created
-# if remote_agent:
-#     print("Remote agent object:", remote_agent)
